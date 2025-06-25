@@ -1,0 +1,92 @@
+/* VARIABLES */
+:root{
+    --color-primario: #FCB03B;
+    --color-secundario: #E92F3D;
+    --color-background: #EFF6F5;
+    --color-background-dark: rgb(42, 42, 42); 
+    --color-texto: #a1a5a6;
+    --text-default: "Open Sans";
+}
+
+/* GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans",Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: var(--color-background-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    margin: 20px;
+}
+#logo{
+    max-width: 100px;
+    max-height: 100px;
+    animation: rotar 3s linear infinite;
+}
+
+@keyframes rotar {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);} 
+}
+
+#title{
+    margin: 10px auto 100px auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+#start{
+    text-align: center;
+}
+
+#start a{
+    text-decoration: none;
+    color: white;
+}
+
+#start button{
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    background-color: #E92F3D;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#start button:hover{
+    background-color: #b32430;
+}
+
+.config{
+    width: 20%;
+    margin: 100px auto 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.config .field{
+    display:flex;
+    flex-direction: column;
+}
+
+.label{
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+}
+
+

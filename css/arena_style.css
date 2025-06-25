@@ -1,0 +1,261 @@
+/* VARIABLES */
+:root{
+    --color-primario: #FCB03B;
+    --color-secundario: #E92F3D;
+    --color-background: #EFF6F5;
+    --color-background-dark: rgb(42, 42, 42); 
+    --color-texto: #a1a5a6;
+    --text-default: "Open Sans";
+}
+
+/* GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans",Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: var(--color-background);
+}
+
+
+.combatGrid{
+    background: url(../img/battle_background.jpg) no-repeat;
+    background-size: 150%;
+    background-position: 70% 100%;
+    display: grid;
+    width: 90%;
+    height: auto;
+    max-width: 800px;
+    margin: 30px auto;
+    
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:    "rival1      rival2   "
+                            "trainer1    trainer2 "
+                            "footer      footer  ";
+    
+}
+
+
+/* BARRA ESTADO */
+
+.combatGrid .status{
+    min-width: 250px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.combatGrid #trainerStatus{
+    margin-left: auto;
+
+}
+
+.levelAndName{
+    padding: 0px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 33px;
+
+    background: #838788;
+    border: 1px solid black;
+    border-bottom: none;
+    color: white;
+}
+
+.status .healthBar{
+    height: 33px;
+    padding: 0px 5px;
+    background-color: white;
+    color: green;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .condition{
+    border: 1px solid black;
+    border-radius: 50%;
+    color: black;
+    padding: 2px;
+    font-size: 14px;
+    }
+
+    .hp{
+        width: 80%;
+        display: flex;
+        justify-content: row;
+        align-items: center;
+    }
+}
+
+.hp .hpBar{
+    height: 10px;
+    margin-left: 5px;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.hpBar .hpLevel{
+    height: 100%;
+    background: green;
+}
+
+#trainerStatus .hpLevel{
+    width: 80%;
+}
+
+#rivalStatus .hpLevel{
+    width: 50%;
+}
+
+#rivalStatus{
+    grid-area: rival1;
+}
+
+#trainerStatus{
+    grid-area: trainer2;
+}
+
+#trainerStatus .healthNumber{
+    background: black;
+    opacity: 0.8;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+}
+
+
+/* CUADRO POKEMON */
+.pokemon{
+    position: relative;
+    display: inline-block;
+    height: auto;
+    min-height: 150px;
+    max-height: 150px;
+    text-align: center;
+    align-content: center;
+}
+
+.pokemon img{
+    transform: scale(1.8);
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.pokemon .sombra{
+    content: '';
+    position: absolute;
+    top:auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+#trainerPokemon{
+    grid-area: trainer1;
+}
+
+#rivalPokemon{
+    grid-area: rival2;
+}
+
+
+/* MENU FOOTER */
+.menu{
+    background: black;
+    opacity: 0.8;
+    color: white;
+    border-top: 3px solid #E92F3D;
+    display: flex;
+    justify-content: space-between;
+    grid-area: footer;
+    width: 100%;
+    margin: auto;
+
+    .dialog{
+    padding-left: 5px;
+    height: 100%;
+    width: 60%;
+    text-align: center;
+    align-self: center;
+    }
+
+    .moves{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 10px 10px;
+    
+    }
+
+}
+
+.moves .move{
+    padding: 10px;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+    min-width: 130px;
+    border:1px solid white;
+}
+
+.move:hover{
+    background: white;
+    color: black;
+    transition: all 0.3s;
+}
+
+/* TIPOS DE ESTADOS ALTERADOS */
+.combatGrid .status .healthBar{
+
+    .freeze{
+        background: rgb(139, 206, 228);
+        color: white;
+    }
+
+    .burn{
+        background: red;
+        color: white;
+    }   
+
+    .sleep{
+        background: rgb(54, 54, 54); 
+        color: white;
+    }
+
+    .poison{
+        background: rgb(129, 33, 129);
+        color: white;
+    }
+
+    .paralysis{
+        background: rgb(250, 192, 0);
+        color: white;
+    }
+
+    .normal{
+        border: none;
+        color: transparent;
+    }
+    
+}
