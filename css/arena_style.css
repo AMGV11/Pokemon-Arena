@@ -9,6 +9,10 @@
 }
 
 /* GENERALES */
+/* @view-transition{
+    navigation: auto; Para transiciones entre paginas
+} */
+
 *{
     margin: 0;
     padding: 0;
@@ -16,19 +20,28 @@
     font-family: "Pixelify Sans",Arial, Helvetica, sans-serif;
 }
 
-body{
-    background: var(--color-background);
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
+body{
+    background: var(--color-background);
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;/* Centra verticalmente */
+
+}
 
 .combatGrid{
-    background: url(../img/battle_background.jpg) no-repeat;
+    background: url(../img/battle_background.jpg) ;
     background-size: 150%;
     background-position: 70% 100%;
+    overflow: hidden;
     display: grid;
     width: 90%;
-    height: auto;
     max-width: 800px;
+    min-width: 800px;
     margin: 30px auto;
     
     grid-gap: 10px;
@@ -40,12 +53,13 @@ body{
     
 }
 
-
 /* BARRA ESTADO */
 
 .combatGrid .status{
     min-width: 250px;
     max-width: 250px;
+    margin-right: 10px;
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -105,18 +119,24 @@ body{
     border-radius: 5px;
 }
 
-.hpBar .hpLevel{
+.hpLevel{
     height: 100%;
+    background: green;
+    transition: all 1.0s;
+}
+
+.green{
     background: green;
 }
 
-#trainerStatus .hpLevel{
-    width: 80%;
+.yellow{
+    background: orange;
 }
 
-#rivalStatus .hpLevel{
-    width: 50%;
+.red{
+    background: red;
 }
+
 
 #rivalStatus{
     grid-area: rival1;
@@ -146,6 +166,7 @@ body{
     max-height: 150px;
     text-align: center;
     align-content: center;
+    overflow: none;
 }
 
 .pokemon img{
@@ -154,7 +175,31 @@ body{
     display: block;
     margin: 0 auto;
     z-index: 1;
+    transition: transform 0.7s ease;
 }
+
+
+
+@keyframes parpadeoBlanco {
+    0%, 100% {
+    filter: brightness(1);
+    }
+    50% {
+     filter: brightness(5); /* Aumenta el brillo para simular blanco */
+    }
+}
+
+
+.blink {
+    animation: parpadeoBlanco 0.5s steps(3, start) forwards;
+    animation-iteration-count: 2;
+}
+
+
+.mover {
+    transform: translate(100px, -100px);
+}
+
 
 .pokemon .sombra{
     content: '';
@@ -197,6 +242,7 @@ body{
     width: 60%;
     text-align: center;
     align-self: center;
+    cursor: default;
     }
 
     .moves{
@@ -210,13 +256,15 @@ body{
 
 }
 
-.moves .move{
+.move{
     padding: 10px;
     text-align: center;
     align-content: center;
     cursor: pointer;
     min-width: 130px;
     border:1px solid white;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .move:hover{
@@ -225,8 +273,18 @@ body{
     transition: all 0.3s;
 }
 
+.hidden {
+    opacity: 0;
+    cursor:default;
+}
+
+.hidden:hover {
+    background: transparent;
+    color: transparent;
+}
+
 /* TIPOS DE ESTADOS ALTERADOS */
-.combatGrid .status .healthBar{
+.status .healthBar{
 
     .freeze{
         background: rgb(139, 206, 228);

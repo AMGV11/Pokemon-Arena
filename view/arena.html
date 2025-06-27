@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Arena - Combat</title>
     <link rel="stylesheet" href="../css/arena_style.css">
-    <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
+    <!-- <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css"> -->
     <link rel="shortcut icon" href="../img/Pokeball_Icon.png">
 
     <!-- Custom pokemon'ish font -->
@@ -17,7 +17,7 @@
             <!-- SPRITE POKEMON Y BARRA ESTADO DEL RIVAL -->
             <div class="status" id="rivalStatus">
                 <div class="levelAndName">
-                    <p class="name" id="rivalPokemonName">Umbreon</p>
+                    <p class="name" id="rivalPokemonName">-</p>
                     <p class="level" id="rivalPokemonLevel">LV: 100</p>
                 </div>
 
@@ -25,7 +25,7 @@
                     <div class="condition normal"><span>STA</span></div>
                     <div class="hp">
                         <span>HP</span>
-                        <div class="hpBar"><div class="hpLevel" id="hpLevel"></div></div>
+                        <div class="hpBar"><div class="hpLevel" id="hpLevelRival"></div></div>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
             <!-- SPRITE POKEMON Y BARRA ESTADO DEL JUGADOR -->
             <div class="status" id="trainerStatus">
                 <div class="levelAndName">
-                    <p class="name" id="trainerPokemonName">Charizard</p>
+                    <p class="name" id="trainerPokemonName">-</p>
                     <p class="level" id="trainerPokemonLevel">LV: 100</p>
                 </div>
 
@@ -47,12 +47,12 @@
                     <div class="condition normal" id="condition"><span>STA</span></div>
                     <div class="hp">
                         <span>HP</span>
-                        <div class="hpBar"><div class="hpLevel" id="hpLevel"></div></div>
+                        <div class="hpBar"><div class="hpLevel" id="hpLevelTrainer"></div></div>
                     </div>
                 </div>
 
                 <div class="healthNumber">
-                    <span id="healthNumber">100</span>/<span id="healthNumberMax">100</span>
+                    <span id="healthNumber">- </span>/<span id="healthNumberMax"> -</span>
                 </div>
             </div>
 
@@ -63,12 +63,12 @@
         
             <!-- MENU DE DIALOGO Y MOVIMIENTOS -->
             <div class="menu">
-                <div class="dialog">What will <p id="trainerPokemonDialog"></p> do?</div>
-                <div class="moves">
-                    <div class="move" id="move1">Flamethrower</div>
-                    <div class="move" id="move2">Fly</div>
-                    <div class="move" id="move3">Dragon Claw</div>
-                    <div class="move" id="move4">Rock Slide</div>
+                <div class="dialog"><p id="trainerPokemonDialog"></p></div>
+                <div class="moves" id="moves">
+                    <div class="move" id="move1">-</div>
+                    <div class="move" id="move2">-</div>
+                    <div class="move" id="move3">-</div>
+                    <div class="move" id="move4">-</div>
                 </div>
             </div>
             
