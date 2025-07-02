@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Arena - Combat</title>
+    <link rel="stylesheet" href="../css/arena_style.css">
+    <!-- <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css"> -->
+    <link rel="shortcut icon" href="../img/Pokeball_Icon.png">
+
+    <!-- Custom pokemon'ish font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="black-overlay" id="blackOverlay"></div>
+    <!-- MODAL REITENTAR -->
+        <div class="modal" id="retry">
+              <!-- Modal content -->
+            <div class="modal-content">
+                <p>Retry?</p>
+                <div class="btn-container">
+                    <button class="btn btn-yes" id="btnYes">Yes</button>
+                    <button class="btn btn-no" id="btnNo">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="combatGrid">
+        
+            <!-- SPRITE POKEMON Y BARRA ESTADO DEL RIVAL -->
+            <div class="status" id="rivalStatus">
+                <div class="levelAndName">
+                    <p class="name" id="rivalPokemonName">-</p>
+                    <p class="level" id="rivalPokemonLevel">LV: 100</p>
+                </div>
+
+                <div class="healthBar">
+                    <div class="condition normal"><span>STA</span></div>
+                    <div class="hp">
+                        <span>HP</span>
+                        <div class="hpBar"><div class="hpLevel" id="hpLevelRival"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pokemon" id="rivalPokemon">
+                
+                <img src="" id="rivalPokemonImg">
+                <div class="sombra"></div>
+            </div>
+        
+            <!-- SPRITE POKEMON Y BARRA ESTADO DEL JUGADOR -->
+            <div class="status" id="trainerStatus">
+                <div class="levelAndName">
+                    <p class="name" id="trainerPokemonName">-</p>
+                    <p class="level" id="trainerPokemonLevel">LV: 100</p>
+                </div>
+
+                <div class="healthBar">
+                    <div class="condition normal" id="condition"><span>STA</span></div>
+                    <div class="hp">
+                        <span>HP</span>
+                        <div class="hpBar"><div class="hpLevel" id="hpLevelTrainer"></div></div>
+                    </div>
+                </div>
+
+                <div class="healthNumber">
+                    <span id="healthNumber">- </span>/<span id="healthNumberMax"> -</span>
+                </div>
+            </div>
+
+            <div class="pokemon" id="trainerPokemon">
+                <img src="" id="trainerPokemonImg">
+                <div class="sombra"></div>
+            </div>
+        
+            <!-- MENU DE DIALOGO Y MOVIMIENTOS -->
+            <div class="menu">
+                <div class="text"><p id="trainerPokemonText"></p></div>
+                <div class="moves" id="moves">
+                    <div class="move" id="move1">-</div>
+                    <div class="move" id="move2">-</div>
+                    <div class="move" id="move3">-</div>
+                    <div class="move" id="move4">-</div>
+                </div>
+            </div>
+            
+        </div>
+        <script src="../js/declaration.js"></script>
+        <script src="../js/dataFetch.js"></script>  
+        <script src="../js/combat.js"></script>  
+        <script src="../js/app.js"></script>
+</body>
+</html>
