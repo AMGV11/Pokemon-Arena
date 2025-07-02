@@ -197,10 +197,21 @@ function effectivenessCheck(){
 
 // Función para calcular el daño 
 function calculateDamage(attackerPokemon, defenderPokemon, move) {
-
   // Constantes y variables
-  const atackerStat = attackerPokemon.stats.atk;
-  const defenderStat = defenderPokemon.stats.def;
+  const moveType = move.damage_class.name // Tipo del movimiento (Fisico o especial)
+  let atackerStat;
+  let defenderStat;
+
+  // Cambiamos las estadisticas dependiendo del tipo de ataque
+  if (moveType == "special"){
+    atackerStat = attackerPokemon.stats.spatk;
+    defenderStat = defenderPokemon.stats.spdef;
+
+  } else {
+    atackerStat = attackerPokemon.stats.atk;
+    defenderStat = defenderPokemon.stats.def;
+  }
+  
   effectivenessBonuses = getAtackMultiplier(move.type.name, defenderPokemon); // Cambia dependiendo de la efectividad entre tipos
 
   // Calculo del daño

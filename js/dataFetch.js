@@ -160,12 +160,10 @@ async function getTypes(dataTypes){
     
     // Fetch para los datos
     const dataType0 = await fetchData(dataTypes[0].type.url);
-    console.log(dataType0.name);
         
     if (dataTypes.length > 1){ // Si el Pokemon tiene mas de un tipo
       const dataType1 = await fetchData(dataTypes[1].type.url);
       types = [dataType0, dataType1];
-      console.log(dataType1.name);
       return types;
     }
     
