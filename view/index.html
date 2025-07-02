@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Arena</title>
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../css/index_style.css">
     <link rel="shortcut icon" href="../img/Pokeball_Icon.png">
 
     <!-- Custom pokemon'ish font -->
@@ -14,23 +13,20 @@
 </head>
 <body>
     <header></header>
-
+            <div class="black-overlay" id="blackOverlay"></div>
     <main>
+
+
         <div id="title">
             <img src="../img/Pokeball_Icon.png" alt="Logo Pokeball" id="logo">
             <h1>Pokemon Arena</h1>
         </div>
         
         <div id="start">
-            <button id="startButton" onclick="location.href='arena.html'">Start</button>
+            <button id="startButton" >Start</button>
         </div>
 
         <div id="config" class="config">
-
-                <!-- <select name="render" id="render">
-                    <option value="html">HTML</option>
-                    <option value="canva">Canva</option>
-                </select> -->
     
                 <div class="field">
                     <label for="language" id="languageLabel" class="label">Language</label>
@@ -52,6 +48,14 @@
     </main>
 
     <footer></footer>
-    <script src="../js/app.js"></script>
+    <script>
+        const startBtn = document.getElementById("startButton");
+        const overlay = document.getElementById("blackOverlay");
+        startBtn.onclick = async function() {
+            overlay.classList.add("dark");
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            window.location.href = "arena.html";
+            }
+    </script>
 </body>
 </html>

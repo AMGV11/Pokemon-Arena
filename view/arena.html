@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="black-overlay" id="blackOverlay"></div>
     <!-- MODAL REITENTAR -->
         <div class="modal" id="retry">
               <!-- Modal content -->
@@ -75,7 +76,7 @@
         
             <!-- MENU DE DIALOGO Y MOVIMIENTOS -->
             <div class="menu">
-                <div class="dialog"><p id="trainerPokemonDialog"></p></div>
+                <div class="text"><p id="trainerPokemonText"></p></div>
                 <div class="moves" id="moves">
                     <div class="move" id="move1">-</div>
                     <div class="move" id="move2">-</div>
@@ -84,7 +85,10 @@
                 </div>
             </div>
             
-        </div>  
+        </div>
+        <script src="../js/declaration.js"></script>
+        <script src="../js/dataFetch.js"></script>  
+        <script src="../js/combat.js"></script>  
         <script src="../js/app.js"></script>
 </body>
 </html>
